@@ -1,0 +1,576 @@
+/* rotating button */
+
+.rotate-button {
+	text-decoration: none;
+	color: black;
+	font-family: sans-serif;
+	font-size: 1rem;
+	border: 1px solid #262626;
+	padding: 1rem;
+	position: relative;
+	overflow: hidden;
+}
+
+.rotate-button:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #fff200;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+	transform-origin: bottom left;
+	transform: rotate(-90deg);
+	transition: transform 1s;
+}
+
+.rotate-button:hover:before {
+	transform: rotate(0deg);
+}
+
+/* swipe button */
+
+.swipe-button {
+	text-decoration: none;
+	color: #351435;
+	font-family: sans-serif;
+	font-size: 1rem;
+	border: 3px solid #351435;
+	padding: 1rem;
+	position: relative;
+	transition: all 1s;
+	overflow: hidden;
+}
+
+.swipe-button:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #351435;
+	z-index: -1;
+	transform: translateX(-100%);
+	transition: all 1s;
+}
+
+.swipe-button:hover:before {
+	transform: translateY(0);
+}
+
+.swipe-button:hover {
+	color: white;
+}
+
+/* totate X Y */
+
+.rotate-x-y {
+	text-decoration: none;
+	color: black;
+	font-family: sans-serif;
+	font-size: 1rem;
+	border: 1px solid #262626;
+	padding: 1rem 1.3rem;
+	position: relative;
+	transition: 1s;
+}
+.rotate-x-y:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #262626;
+	transition: 1s;
+	transform: rotateX(90deg);
+	z-index: -1;
+}
+
+.rotate-x-y:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #262626;
+	transition: 1s;
+	transform: rotateY(90deg);
+	z-index: -1;
+}
+
+.rotate-x-y:hover:before {
+	transform: rotateX(0);
+}
+
+.rotate-x-y:hover:after {
+	transform: rotateY(0);
+}
+
+.rotate-x-y:hover {
+	color: white;
+}
+
+/* stretch button */
+
+.stretch-button {
+	text-decoration: none;
+	color: black;
+	font-family: sans-serif;
+	color: #e1332d;
+	border: 3px solid #e1332d;
+	width: auto;
+	font-size: 1rem;
+	font-family: 'roboto';
+	font-weight: 300;
+	transition: all 0.5s;
+	padding: 1rem;
+}
+
+.stretch-button:hover {
+	font-weight: 900;
+	letter-spacing: 2px;
+	border: 7px solid #e1332d;
+}
+
+/* Translate button */
+
+.translate-button {
+	background-color: #222222;
+	text-decoration: none;
+	color: white;
+	font-family: sans-serif;
+	font-size: 1rem;
+	border: 3px solid white;
+	padding: 1rem 0.5rem;
+	transition: all 0.3s;
+	position: relative;
+	overflow: hidden;
+}
+
+.translate-button:hover {
+	background-color: #f44336;
+}
+
+.translate-button:before {
+	content: '';
+	background-color: white;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 25px;
+	position: absolute;
+	transform: translateX(-100%) rotate(45deg);
+	transition: all 0.3s;
+}
+
+.translate-button:hover:before {
+	transform: translateX(100%) rotate(45deg);
+}
+
+/* fill button */
+
+.fill-button {
+	border: 1px solid tomato;
+	background: none;
+	color: tomato;
+	padding: 1rem;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: all 0.5s;
+	position: relative;
+	overflow: hidden;
+}
+
+.fill-button:hover {
+	color: white;
+}
+
+.fill-button:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: tomato;
+	z-index: -1;
+	border-radius: 0% 0% 50% 50%;
+	transition: all 0.5s;
+	height: 0%;
+}
+
+.fill-button:hover:before {
+	height: 190%;
+}
+
+/* shift background button */
+
+.shift-bg {
+	padding: 1rem;
+	font-size: 1rem;
+	text-decoration: none;
+	background-color: transparent;
+	text-align: center;
+	font-weight: bold;
+	position: relative;
+	transition: all 0.2s;
+	color: white;
+	cursor: pointer;
+}
+
+.shift-bg:before {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: -3px;
+	width: 100%;
+	height: 100%;
+	background-color: #20caff;
+	z-index: -1;
+	mix-blend-mode: multiply;
+	transition: all 0.2s;
+	transform-origin: top;
+}
+
+.shift-bg:hover:before {
+	top: -6px;
+	left: 0;
+	transform: perspective(1000px) rotateX(75deg);
+}
+
+.shift-bg:after {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 100%;
+	height: 100%;
+	background-color: #ff7675;
+	z-index: -1;
+	mix-blend-mode: multiply;
+	transition: all 0.2s;
+	transform-origin: bottom;
+}
+
+.shift-bg:hover:after {
+	top: 6px;
+	left: 0;
+	transform: perspective(1000px) rotateX(-75deg);
+}
+
+.shift-bg:hover {
+	color: #272727;
+}
+
+/* splited button */
+
+.splited-button {
+	text-decoration: none;
+	color: #f6b93b;
+	padding: 1rem 0.5rem;
+	font-size: 1rem;
+	position: relative;
+	border: 3px solid #f6b93b;
+	transition: all 0.2s;
+	overflow: hidden;
+}
+
+.splited-button:before,
+.splited-button:after,
+.splited-button span:before,
+.splited-button span:after {
+	content: '';
+	position: absolute;
+	width: 25%;
+	height: 100%;
+	background-color: #f6b93b;
+	z-index: -1;
+	transition: all 0.1s;
+}
+
+.splited-button:before {
+	top: 100%;
+	left: 0%;
+}
+
+.splited-button:hover:before {
+	top: 0;
+	left: 0;
+}
+
+.splited-button:after {
+	top: -100%;
+	right: 0;
+	transition-delay: 0.3s;
+}
+
+.splited-button:hover:after {
+	top: 0;
+	right: 0;
+}
+
+.splited-button span:before {
+	top: -100%;
+	left: 25%;
+	transition-delay: 0.1s;
+}
+
+.splited-button:hover > span:before {
+	top: 0;
+	left: 25%;
+}
+
+.splited-button span:after {
+	bottom: -100%;
+	right: 25%;
+	transition-delay: 0.2s;
+}
+
+.splited-button:hover span:after {
+	bottom: 0;
+	right: 25%;
+}
+
+.splited-button:hover {
+	color: white;
+}
+
+/* swap button */
+
+.swap-button {
+	text-decoration: none;
+	padding: 1rem;
+	font-size: 1rem;
+	font-family: verdana;
+	text-align: center;
+	color: #fdc518;
+	position: relative;
+}
+
+.swap-button:before {
+	content: '';
+	position: absolute;
+	height: 5rem;
+	width: 8rem;
+	top: -15px;
+	left: 0;
+	border-left: 2px solid red;
+	border-right: 2px solid #fdc518;
+	transition: all 01s;
+}
+
+.swap-button:after {
+	content: '';
+	position: absolute;
+	height: 3.5rem;
+	width: 10rem;
+	top: 0;
+	left: -15px;
+	border-top: 2px solid red;
+	border-bottom: 2px solid #fdc518;
+	transition: all 1s;
+}
+
+.swap-button:hover:before {
+	transform: rotateY(180deg);
+}
+
+.swap-button:hover:after {
+	transform: rotateX(180deg);
+}
+
+/* grow border button */
+
+.grow-border {
+	border: none;
+	padding: 1rem 1.3rem;
+	background-color: tomato;
+	color: white;
+	font-family: 'BenchNine';
+	font-size: 1rem;
+	cursor: pointer;
+	position: relative;
+}
+
+.grow-border:before {
+	content: '';
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	top: -5px;
+	left: -5px;
+	border-top: 2px solid tomato;
+	border-left: 2px solid tomato;
+	transition: all 0.25s;
+}
+
+.grow-border:hover:before,
+.grow-border:hover:after {
+	height: 100%;
+	width: 100%;
+}
+
+.grow-border:after {
+	content: '';
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	bottom: -5px;
+	right: -5px;
+	border-bottom: 2px solid tomato;
+	border-right: 2px solid tomato;
+	transition: all 0.25s;
+}
+
+/* Skewed button */
+
+.skewed-button {
+	text-decoration: none;
+	position: relative;
+	letter-spacing: 2px;
+	padding: 0.8rem;
+	background: transparent;
+	font-size: 1rem;
+	color: white;
+}
+
+.skewed-button:before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	left: -1%;
+	top: -5px;
+	background-color: #ee5253;
+	transform: skewX(30deg);
+	z-index: -1;
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.skewed-button:hover:before {
+	transform: skewX(0deg);
+	left: 50%;
+	top: 0;
+}
+
+.skewed-button:after {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 50%;
+	left: 51%;
+	top: 5px;
+	background-color: #0a3d62;
+	transform: skewX(30deg);
+	z-index: -1;
+	transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.skewed-button:hover:after {
+	transform: skewX(0deg);
+	left: 0%;
+	top: 0;
+}
+
+/* pulsing button */
+
+.pulsing-button {
+	text-decoration: none;
+	color: white;
+	font-family: sans-serif;
+	font-size: 1rem;
+	padding: 1rem;
+	position: relative;
+	overflow: hidden;
+	border-radius: 100px;
+	background-color: tomato;
+	transition: all 0.2s;
+}
+
+.pulsing-button:before {
+	content: '';
+	/* position: absolute; */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: tomato;
+	border-radius: 100px;
+	transition: all 0.4s;
+	z-index: -1;
+}
+
+.pulsing-button:hover:before {
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+
+.pulsing-button:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.pulsing-button:active {
+	transform: translateY(-1px);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* more swipe button */
+
+.more-swipe {
+	text-decoration: none;
+	position: relative;
+	padding: 1rem 1.5rem;
+	text-align: center;
+	color: tomato;
+	border: 2px solid tomato;
+	font-size: 1rem;
+	transition: all 0.5s;
+	overflow: hidden;
+}
+
+.more-swipe:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border-top: 40px solid tomato;
+	border-bottom: 40px solid tomato;
+	border-right: 40px solid transparent;
+	transition: all 0.5s;
+	z-index: -1;
+	transform: translateX(-100%);
+}
+
+.more-swipe:hover:before {
+	transform: translateX(0%);
+}
+
+.more-swipe:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border-top: 40px solid tomato;
+	border-bottom: 40px solid tomato;
+	border-left: 40px solid transparent;
+	transition: all 0.5s;
+	z-index: -1;
+	transform: translateX(100%);
+}
+
+.more-swipe:hover:after {
+	transform: translateX(0%);
+}
+
+.more-swipe:hover {
+	color: white;
+}
