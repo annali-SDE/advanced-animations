@@ -9,7 +9,7 @@ const NavBar = () => {
 			<div className={styles['menu']}>
 				<div className={styles['user']}>
 					<div className={styles['imgBx']}>
-						<Image src={img} alt='image' width={25} height={25}></Image>
+						<Image src={img} alt='image' width={100} height={100}></Image>
 					</div>
 					<div className={styles['details']}>
 						<h3>Anna Li</h3>
